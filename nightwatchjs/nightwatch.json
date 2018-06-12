@@ -1,49 +1,53 @@
 {
-    "src_folders" : ["./src/tests"],
-    "output_folder" : "logs",
-    "custom_commands_path" : "",
-    "custom_assertions_path" : "",
-    "page_objects_path" : "./src/page_objects",
-    "globals_path" : "",
-  
-    "selenium" : {
-      "start_process" : true,
-      "server_path" : "./bin/selenium-server-standalone-3.12.0.jar",
-      "log_path" : "",
-      "port" : 4444,
-      "cli_args" : {
-        "webdriver.chrome.driver" : "./bin/chromedriver",
-        "webdriver.gecko.driver" : "",
-        "webdriver.edge.driver" : ""
+  "src_folders": ["./src/tests"],
+  "output_folder": "./logs",
+  "custom_commands_path": "",
+  "custom_assertions_path": "",
+  "page_objects_path": "./src/page_objects",
+  "globals_path": "",
+
+  "selenium": {
+    "start_process": true,
+    "server_path": "./lib/selenium-server-standalone-3.9.1.jar",
+    "log_path": "./logs",
+    "port": 4444,
+    "cli_args": {
+      "webdriver.chrome.driver": "./lib/chromedriver.exe",
+      "webdriver.gecko.driver": "",
+      "webdriver.edge.driver": ""
+    }
+  },
+
+  "test_settings": {
+    "default": {
+      "launch_url": "https://google.com",
+      "selenium_port": 4444,
+      "selenium_host": "localhost",
+      "silent": true,
+      "screenshots": {
+        "enabled": false,
+        "on_failure": true,
+        "on_error": true,
+        "path": ""
+      },
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "marionette": true
       }
     },
-  
-    "test_settings" : {
-      "default" : {
-        "launch_url" : "https://google.com",
-        "selenium_port"  : 4444,
-        "selenium_host"  : "localhost",
-        "silent": true,
-        "screenshots" : {
-          "enabled" : false,
-          "path" : ""
-        },
-        "desiredCapabilities": {
-          "browserName": "chrome",
-          "marionette": true
-        }
-      },
-  
-      "firefox" : {
-        "desiredCapabilities": {
-          "browserName": "firefox"
-        }
-      },
-  
-      "edge" : {
-        "desiredCapabilities": {
-          "browserName": "MicrosoftEdge"
-        }
+
+    "firefox": {
+      "desiredCapabilities": {
+        "browserName": "firefox"
+      }
+    },
+
+    "edge": {
+      "desiredCapabilities": {
+        "browserName": "MicrosoftEdge"
       }
     }
   }
+}
